@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head><title>Publicaciones</title></h:head> 
+<body> 
+<f:view>
+	<h1>Publicaciones</h1>
+	<h:form>
+		<h:outputLabel value="Noticia #{controladorLogica.idn}:" for="coso" />
+		<h1>-------------------</h1>
+		<h:dataTable var="p" value="#{controladorLogica.publicaciones(controladorLogica.idn)}" border="1" cellpadding="1" cellspacing="2">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{p.idp}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Tipo</f:facet>
+				<h:outputText value="#{p.tipo}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">URL</f:facet>
+				<h:outputText value="#{p.url}" />
+			</h:column>
+		</h:dataTable>
+		<br></br>
+		<h:commandButton action="#{controladorLogica.volver()}" value="Volver" />
+	</h:form>
+</f:view>
+</body> 
+</html>

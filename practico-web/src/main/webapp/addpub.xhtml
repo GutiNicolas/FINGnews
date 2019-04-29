@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head><title>Agregar Publicacion</title></h:head> 
+<body> 
+	<f:view>
+		<h1>Agregar Noticia</h1>
+		<h:form>
+			<h:panelGrid columns="2">			
+				<h:outputLabel value="ID Noticia #{controladorLogica.idn}" for="coso" />
+				<br></br>
+				<h:outputLabel value="Tipo:" for="tipo" />
+				<h:inputText id="tipo" value="#{controladorLogica.p.tipo}" title="Tipo" required="true" requiredMessage="El campo Tipo es requerido" />
+				<h:outputLabel value="Url:" for="url" />
+				<h:inputText id="url" value="#{controladorLogica.p.url}" title="Url" required="true" requiredMessage="El campo Url es requerido" />
+				<h:commandButton action="#{controladorLogica.addP()}" value="Guardar" />
+				<h:commandButton action="#{controladorLogica.volver()}" value="Volver" />
+			</h:panelGrid>
+		</h:form>
+	</f:view>
+</body> 
+</html>

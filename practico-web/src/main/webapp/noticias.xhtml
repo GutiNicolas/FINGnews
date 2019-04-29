@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Noticias</title>
+</head>
+<body>
+<f:view>
+	<h1>NOTICIAS</h1>
+	<h:form>
+		<h:dataTable var="p" value="#{controladorLogica.noticias()}" border="1" cellpadding="1" cellspacing="2">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{p.id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Titulo</f:facet>
+				<h:outputText value="#{p.titulo}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Descripcion</f:facet>
+				<h:outputText value="#{p.descripcion}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Opciones</f:facet>
+				<h:commandLink action="#{controladorLogica.seleccionar(p.id)}" value="Agregar Publicacion" />
+				<br></br><h:commandLink action="#{controladorLogica.listar(p.id)}" value="Listar Publicaciones" />
+			</h:column>
+		</h:dataTable>
+		<br></br>
+		<h:link value="Agregar Noticia" outcome="addnew"/>
+	</h:form>
+</f:view>
+</body>
+</html>
