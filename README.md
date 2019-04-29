@@ -1,0 +1,2 @@
+# FINGnews
+FING NEWS repo
